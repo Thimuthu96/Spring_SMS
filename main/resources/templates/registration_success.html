@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+	<meta charset="ISO-8859-1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+	<title>AmigaEdu</title>
+	<style>
+        @media only screen and (max-width: 1000px){
+            #search_txt{
+                visibility: hidden;
+            }
+            .show{
+                visibility: hidden;
+            }
+            .nav-item{
+                visibility: visible;
+            }
+            .dropdown-item{
+                visibility: visible;
+                color: white;
+            }
+        }
+        .footer{
+		    position:relative;
+		    left: 0;
+		    bottom: 0;
+		    width: 100%;
+		    height: 50px;
+		    background-color: #081f5d;
+		    color: #fff;
+		    text-align: center;
+		}
+        .alert {
+		  padding: 20px;
+		  background-color: #4d5f96;
+		  color: white;
+		}
+		
+		.closebtn {
+		  margin-left: 15px;
+		  color: white;
+		  font-weight: bold;
+		  float: right;
+		  font-size: 22px;
+		  line-height: 20px;
+		  cursor: pointer;
+		  transition: 0.3s;
+		}
+		
+		.closebtn:hover {
+		  color: black;
+		}
+    </style>
+</head>
+<body style="display:block;">
+    <div>
+        <header style="margin-bottom: 56px;">
+            <nav class="navbar navbar-dark navbar-expand-lg overlay" style="background-color: #081f5d; position: fixed; top: 0; width: 100%; z-index: 9;">
+                <div class="container">
+                    <a href="#" class="navbar-brand lead" style="margin-left: 10px; font-weight: bold;">AMIGA-EDU <span style="color: rgb(255, 230, 6); font-weight: bolder;">.</span></a>
+                    <button class="navbar-toggler" data-toggle="collapse" data-target="#data"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse justify-content-center" id="data">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a href="#" class="nav-link active">Home</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Subjects</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link disabled">Exams</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Support</a></li>
+                        <li class="nav-item"><a th:href="@{/list_users}" class="nav-link">Students Life</a></li>
+                        <li class="nav-item"><a th:href="@{/registration}" class="nav-link button">Students</a></li>
+                        <li class="nav-item"><a th:href="@{/adminlogin}" class="nav-link button">Teacher</a></li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        </header>
+    </div>
+    <div class="alert" style="margin-top:18px; margin-bottom:-10px;">
+		<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+	  	<strong>Info!</strong> Registration Succeeded! Please login to continue.
+	</div>
+    <div class="slideshow" style="position:relative;">
+        <div class="carousel slide carousel-fade" data-ride="carousel" id="slideControler">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="./img/1.png" class="d-block w-100 img" alt="">
+                </div>
+                <div class="carousel-item">
+                    <img src="./img/2.png" class="d-block w-100 img " alt="">
+                </div>
+                <div class="carousel-item">
+                    <img src="./img/3.png" class="d-block w-100 img" alt="">
+                </div>
+                <div class="carousel-item">
+                    <img src="./img/4.png" class="d-block w-100 img" alt="">
+                </div>
+                <div class="carousel-item">
+                    <img src="./img/5.png" class="d-block w-100 img" alt="">
+                </div>
+            </div>
+            <a href="#slideControler" class="carousel-control-prev" data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a href="#slideControler" class="carousel-control-next" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </a>
+        </div>
+    </div>
+    <div class="container sectionBreak">
+        <div class="row">
+            <div class="col-sm-12 col-md-6 title">
+                
+                <h1 class="text-center">About</h1><br>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi optio neque harum corporis vitae adipisci repellendus, pariatur quod animi aut nemo distinctio tempora voluptatem error quos exercitationem impedit nulla id!
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi optio neque harum corporis vitae adipisci repellendus, pariatur quod animi aut nemo distinctio tempora voluptatem error quos exercitationem impedit nulla id!
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi optio neque harum corporis vitae adipisci repellendus, pariatur quod animi aut nemo distinctio tempora voluptatem error quos exercitationem impedit nulla id!
+                </p>
+            </div>
+            <div class="col-sm-12 col-md-3 aboutBanner">
+                <img src="./img/contact-img.png" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="container mt-3">
+        <!--start header-->
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1 class="header">Explore Subjects</h1><br>
+            </div>
+        </div>
+        <!--end header-->
+        <div class="row" style="margin-bottom: 50px;">
+
+            <div class="col-12 col-md-3 col-lg-3 card">
+                <p class="text-center lead">Mathematics</p>
+                <img src="./img/subject.png" alt="" style="width: 250px; height: auto;" class="mx-auto d-block img-fluid">
+                <a href="#">Details</a>
+            </div>
+
+            <div class="col-12 col-md-3 col-lg-3 card">
+                <p class="text-center lead">Science</p>
+                <img src="./img/subject.png" alt="" style="width: 250px; height: auto;" class="mx-auto d-block img-fluid">
+                <a href="#">Details</a>
+            </div>
+
+            <div class="col-12 col-md-3 col-lg-3 card">
+                <p class="text-center lead">English</p>
+                <img src="./img/subject.png" alt="" style="width: 250px; height: auto;" class="mx-auto d-block img-fluid">
+                <a href="#">Details</a>
+            </div>
+
+            <div class="col-12 col-md-3 col-lg-3 card">
+                <p class="text-center lead">Physics</p>
+                <img src="./img/subject.png" alt="" style="width: 250px; height: auto;" class="mx-auto d-block img-fluid">
+                <a href="#">Details</a>
+            </div>
+        </div>
+
+
+        <div class="row">
+
+            <div class="col-12 col-md-3 col-lg-3 card">
+                <p class="text-center lead">Chemistry</p>
+                <img src="./img/subject.png" alt="" style="width: 250px; height: auto;" class="mx-auto d-block img-fluid">
+                <a href="#">Details</a>
+            </div>
+
+            <div class="col-12 col-md-3 col-lg-3 card">
+                <p class="text-center lead">Combined Maths</p>
+                <img src="./img/subject.png" alt="" style="width: 250px; height: auto;" class="mx-auto d-block img-fluid">
+                <a href="#">Details</a>
+            </div>
+
+            <div class="col-12 col-md-3 col-lg-3 card">
+                <p class="text-center lead">Web Design</p>
+                <img src="./img/subject.png" alt="" style="width: 250px; height: auto;" class="mx-auto d-block img-fluid">
+                <a href="#">Details</a>
+            </div>
+
+            <div class="col-12 col-md-3 col-lg-3 card">
+                <p class="text-center lead">Java</p>
+                <img src="./img/subject.png" alt="" style="width: 250px; height: auto;" class="mx-auto d-block img-fluid">
+                <a href="#">Details</a>
+            </div>
+        </div>
+        <br><br>
+
+    </div>
+
+    <div class="title">
+        <h1>Contact Us</h1>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-6">
+                <!-- Wrapper container -->
+                <div class="container py-4">
+    
+                    <!-- Bootstrap 5 starter form -->
+                    <form id="contactForm">
+                
+                    <!-- Name input -->
+                    <div class="mb-3">
+                        <label class="form-label" for="name">Name</label>
+                        <input class="form-control" id="name" type="text" placeholder="Name" data-sb-validations="required" />
+                        <div class="invalid-feedback" data-sb-feedback="name:required">Name is required.</div>
+                    </div>
+                
+                    <!-- Email address input -->
+                    <div class="mb-3">
+                        <label class="form-label" for="emailAddress">Email Address</label>
+                        <input class="form-control" id="emailAddress" type="email" placeholder="Email Address" data-sb-validations="required, email" />
+                        <div class="invalid-feedback" data-sb-feedback="emailAddress:required">Email Address is required.</div>
+                        <div class="invalid-feedback" data-sb-feedback="emailAddress:email">Email Address Email is not valid.</div>
+                    </div>
+                
+                    <!-- Message input -->
+                    <div class="mb-3">
+                        <label class="form-label" for="message">Message</label>
+                        <textarea class="form-control" id="message" type="text" placeholder="Message" style="height: 10rem;" data-sb-validations="required"></textarea>
+                        <div class="invalid-feedback" data-sb-feedback="message:required">Message is required.</div>
+                    </div>
+                
+                    <!-- Form submissions success message -->
+                    <div class="d-none" id="submitSuccessMessage">
+                        <div class="text-center mb-3">Form submission successful!</div>
+                    </div>
+                
+                    <!-- Form submissions error message -->
+                    <div class="d-none" id="submitErrorMessage">
+                        <div class="text-center text-danger mb-3">Error sending message!</div>
+                    </div>
+                
+                    <!-- Form submit button -->
+                    <div class="d-grid">
+                        <button class="btn btn-lg btn1" type="submit">Submit</button>
+                    </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-3 contactBanner">
+                <img src="./img/contact1.png" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Created For HDSE Spring Boot Project | © 2021 All rights reserved.</p>
+    </div>
+
+	
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="./js/jquery.js"></script>
+    <script src="./js/bootstrap.js"></script>
+    <script src="./js/sb-forms-latest.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
